@@ -1,0 +1,42 @@
+﻿@model BANGTANS.Models.Picture
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+@{
+    
+    Html.RenderPartial("~/Views/Artist/_Slideshow.cshtml");
+}
+
+<div style="text-align: center; margin-bottom: 4em;" id="main-title" name="main-title">
+    <h1>방탄소년단, 그들의 음악 이야기</h1>
+    <h4>We love music</h4>
+</div>
+
+@{
+     Html.RenderAction("GetList", "Album", new { id = 1 });
+}
+
+<div style="background-color: black; min-height: 10em; color: #ccc; text-align: center; vertical-align: middle; padding: 2em;">
+    <h1>뮤직비디오</h1>
+    <h4></h4>
+    @{ 
+        Html.RenderPartial("~/Views/Album/_VideoList.cshtml");
+    }
+</div>
+
+
+<div style="text-align: center; margin-bottom: 4em;">
+    <h1>방탄소년단</h1>
+    <h4>We love music</h4>
+</div>
+
+@{ 
+    Html.RenderAction("GetList", "Member", new { id = 1 });
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/slideshow.js")
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BANGTANS.Models.AlbumViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>앨범 목록</h2>
+
+<p style="text-align: right;">
+    @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "btn btn-primary" })
+</p>
+
+<!--
+@*<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#firstTab">View All</a></li>
+    <li><a data-toggle="tab" href="#secondTab">Add New</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in active">@Html.Action("Index", "Album")</div>
+    <div id="secondTab" class="tab-pane fade in">@Html.Action("Create", "Album")</div>
+</div>
+*@
+-->
+<!--
+@*
+<div class="row" style="padding:10px 0px; margin: 2px;">
+    <div class="col-md-2" style="min-width:100px;">@Html.DisplayNameFor(model => model.Artist.Name)</div>
+    <div class="col-md-1">@Html.DisplayNameFor(model => model.ReleasedDate)</div>
+    <div class="clearfix visible-xs"></div>
+    <div class="col-xs-0 col-md-7">@Html.DisplayNameFor(model => model.Subtitle)（@Html.DisplayNameFor(model => model.Artist.Name)）</div>
+    <div class="col-md-2" style="min-width:200px;"></div>
+</div>
+    
+*@
+-->
+@foreach (var item in Model)
+{
+    <div class="row" style="border:1px solid gray; border-left:6px solid gray; border-radius:5px; padding:10px 0px; margin: 2px;">
+        <div class="col-md-2" style="min-width:120px;"><img src="@Url.Content(item.ImageUrl)" class = "img-thumbnail" /></div>
+        <!--@*<div class="col-md-1">@Html.DisplayFor(modelItem => item.ReleasedDate)</div>*@-->
+        <div class="col-md-2">@Html.DisplayFor(modelItem => item.Title)</div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-xs-0 col-md-6" style="overflow:hidden; white-space: nowrap; text-overflow:ellipsis;">@Html.DisplayFor(modelItem => item.Description)</div>
+        <div class="col-md-2" style="max-width:160px; padding-right:0px;">
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+        </div>
+    </div>
+}

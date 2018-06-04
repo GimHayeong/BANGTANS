@@ -1,0 +1,109 @@
+﻿@model IEnumerable<BANGTANS.Models.AlbumViewModel>
+
+@{ 
+    string[] borderColors = { "border-red", "border-green", "border-blue", "border-yellow" };
+    string[] innerBorderColors = { "img-innerborder-red", "img-innerborder-green", "img-innerborder-blue", "img-innerborder-yellow" };
+}
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    var model = Model.ElementAt(i);
+
+    var col = i % 4;
+    if (col == 0)
+    { @Html.Raw("<div class='row'>") }
+     
+        <div class="col-md-3">
+            <ul class="list-unstyled">
+                <li style="padding-left: 4em;">
+                    <div class="img-thumbnail-circle img-innerborder img-circle @innerBorderColors[col]"><img src="@Url.Content(model.ImageUrl)" /></div>
+                    <div class="clearfix"></div>
+                </li>
+
+                <li class="list-main-title">
+                    <div class="category-title">
+                        <h4>@Url.Content(model.Title)</h4>
+                        <hr class="@borderColors[col]" style="min-width: 100px;" />
+                    </div>
+                </li>
+
+                <li class="list-sub-title">
+                    @if (model.Subtitle != null)
+                    {@Url.Content(model.Subtitle)}
+                </li>
+
+                <li style="text-align: center;">
+                    (발매일: @Url.Content(model.ReleasedDate.ToString("yyyy-MM-dd")))
+                </li>
+
+                <li class="list-description">
+                    @Url.Content(model.Description)
+                </li>
+            </ul>
+        </div>
+    if (col == 3)
+    { @Html.Raw("</div><div class='clearfix'></div>") }
+}
+<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+<!--@*
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleasedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleasedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+*@-->

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<BANGTANS.Models.MemberViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>멤버 목록</h2>
+
+<p style="text-align: right;">
+    
+   @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "btn btn-primary" })
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="row row-left-gray">
+        <div class="col-md-2" style="min-width:120px;"><img src="@Url.Content(item.ImageUrl)" class="img-rounded img-thumbnail" /></div>
+        <div class="col-md-2">@Html.DisplayFor(modelItem => item.StageName)</div>
+        <div class="col-md-2">@Html.DisplayFor(modelItem => item.Role)</div>
+        <div class="col-md-2">@Html.DisplayFor(modelItem => item.BirtyDay) 일생</div>
+        <div class="col-md-2">@Html.DisplayFor(modelItem => item.Height) cm / @Html.DisplayFor(modelItem => item.Weight) Kg</div>
+        <div class="clearfix visible-xs"></div>
+        <div class="col-md-2" style="max-width:160px; padding-right:0px;">
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-default btn-xs" })
+        </div>
+    </div>
+}
+
+
+<!--@*
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirtyDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirtyDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+*@-->

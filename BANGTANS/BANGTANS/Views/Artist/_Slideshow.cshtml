@@ -1,0 +1,70 @@
+﻿@*
+    @{
+        Html.RenderPartial("~/Views/Artist/_Slideshow.cshtml");
+    }
+*@
+
+@section header {
+    
+
+}
+
+
+<div class="slideshow-container">
+    <div class="slideItem fade">
+        <div class="numbertext">1 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-7-jm.jpg" style="width: 100%" />
+        <div class="captiontext">Boys Meet Evil "놓치긴 싫었어 악마의 손길을"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">2 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-0-bts.jpg" style="width: 100%" />
+        <div class="captiontext">피 땀 눈물 "나를 부드럽게 죽여줘"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">3 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-1-v.jpg" style="width: 100%" />
+        <div class="captiontext">Begin "죽을 것 같아, 형이 슬프면..."</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">4 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-2-suga.jpg" style="width: 100%" />
+        <div class="captiontext">Lie "너무나 커져버린 거짓이 나를 삼키려 해"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">5 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-3-jk.jpg" style="width: 100%" />
+        <div class="captiontext">Stigma "그때 나한테 왜 그랬어?"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">6 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-4-rm.jpg" style="width: 100%" />
+        <div class="captiontext">Awake "믿는게 아냐, 버텨보는 거야"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">7 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-5-jin.jpg" style="width: 100%" />
+        <div class="captiontext">21세기 소녀 "말해 너는 강하다고, 말해 넌 충분하다고"</div>
+    </div>
+    <div class="slideItem fade">
+        <div class="numbertext">8 / 8</div>
+        <img src="~/Content/Images/Artist/1/ly-o-6-jhope.jpg" style="width: 100%" />
+        <div class="captiontext">Wings "점점 더 무거워지는 공기를 뚫고 날아"</div>
+    </div>
+
+    <a class="prev" onclick="nextSlideItem(-1)">&#10094;</a>
+    <a class="next" onclick="nextSlideItem(1)">&#10095;</a>
+
+</div>
+<br />
+<div style="text-align: center">
+    <span class="dot" onclick="currentSlideItem(1)"></span>
+    <span class="dot" onclick="currentSlideItem(2)"></span>
+    <span class="dot" onclick="currentSlideItem(3)"></span>
+    <span class="dot" onclick="currentSlideItem(4)"></span>
+    <span class="dot" onclick="currentSlideItem(5)"></span>
+    <span class="dot" onclick="currentSlideItem(6)"></span>
+    <span class="dot" onclick="currentSlideItem(7)"></span>
+    <span class="dot" onclick="currentSlideItem(8)"></span>
+</div>
+

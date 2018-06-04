@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 방탄소년단</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("header", required: false)@*2018.06.01.*@
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("BTS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("아티스트", "Index", "Artist")</li>
+                    <li>@Html.ActionLink("앨범", "Index", "Album")</li>
+                    <li>@Html.ActionLink("멤버", "Index", "Member")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="margin-left: 1.5em;">
+            <div class="row">
+                <div class="col-md-4">&copy; @DateTime.Now.Year - 빅히트 엔터테인먼트</div>
+                <div class="col-md-4"><a href="https://www.google.com.sg/maps/place/서울 강남 도산대로16길 13-20" target="_blank">서울 강남 도산대로16길 13-20</a></div>
+                <div class="col-md-4"><a href="tel:02-3456-7890" target="_blank">02-3456-7890</a></div>
+            </div>
+            <div class="row">
+                <button onclick="topFunction()" id="btnGotoTop" name="btnGotoTop" title="Go to top">Top</button>
+            </div>
+            
+        </footer>
+    </div>
+
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/Scripts/scrollTop.js")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

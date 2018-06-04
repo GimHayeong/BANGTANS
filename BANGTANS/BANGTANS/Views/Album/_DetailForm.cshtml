@@ -1,0 +1,48 @@
+﻿@model BANGTANS.Models.AlbumViewModel
+
+<div class="category-title">
+    <h4>@Html.DisplayFor(model => model.Title)</h4>
+    <hr class="border-red" />
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="img-thumbnail-circle img-innerborder img-circle"><img src="@Url.Content(Model.ImageUrl)" /></div>
+    </div>
+    <div class="clearfix visible-xs visible-sm"></div>
+    <div class="col-md-10">
+        <dl class="dl-horizontal">
+            <dt class="visible-md visible-sm visible-lg">
+                @Html.DisplayNameFor(model => model.Artist.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Artist.Name)
+            </dd>
+
+            <dt class="visible-md visible-sm visible-lg">
+                @Html.DisplayNameFor(model => model.Subtitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Subtitle)
+            </dd>
+
+            <dt class="visible-md visible-sm visible-lg">
+                @Html.DisplayNameFor(model => model.ReleasedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReleasedDate)
+            </dd>
+
+            <dt class="visible-md visible-sm visible-lg">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd style="overflow: auto; text-align: justify;">
+                <span class="visible-xs">&nbsp;</span>@Html.DisplayFor(model => model.Description)
+            </dd>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model BANGTANS.Models.MemberViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>상세정보</h2>
+
+<div>
+    <div class="category-title" style="text-align:center;">
+        <h4>@Html.DisplayFor(model => model.StageName)</h4>
+        <hr class="border-red" style="min-width: 100px;" />
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <img src="@Url.Content(Model.ImageUrl)" class="img-thumbnail-circle img-circle" />
+        </div>
+        <div class="clearfix visible-xs visible-sm"></div>
+        <div class="col-md-10">
+            <dl class="dl-horizontal" style="margin-left: 10px;">
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.Artist.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Artist.Name)
+                </dd>
+
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.Role)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
+
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.BirtyDay)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BirtyDay)
+                </dd>
+
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.Height)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Height) cm
+                </dd>
+
+                <dt class="visible-md visible-sm visible-lg">
+                    @Html.DisplayNameFor(model => model.Weight)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Weight) kg
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+    
+</div>
+<p style="margin-top: 30px; margin-left: 20px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink("Back to List", "Index", "", htmlAttributes: new { @class = "btn btn-default btn-xs" })
+</p>

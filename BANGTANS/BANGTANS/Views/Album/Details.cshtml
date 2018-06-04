@@ -1,0 +1,17 @@
+﻿@model BANGTANS.Models.AlbumViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> 앨범 상세 정보</h2>
+
+<div>
+    @Html.Partial("_DetailForm")
+</div>
+
+<p style="margin-top: 30px; margin-left: 20px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-default btn-xs" })
+    @Html.ActionLink("Back to List", "Index", "", htmlAttributes: new { @class = "btn btn-default btn-xs" })
+</p>
+

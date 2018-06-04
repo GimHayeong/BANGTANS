@@ -1,0 +1,73 @@
+﻿@model BANGTANS.Models.AlbumViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>정보 삭제</h2>
+
+<h3>앨범 정보</h3>
+<div>
+    <h4>(삭제한 앨범 정보는 복구할 수 없으니, 확인 후 삭제하세요.)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artist.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleasedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleasedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Url.Content(Model.ImageUrl.Substring(Model.ImageUrl.LastIndexOf('/') + 1))
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to List", "Index", "", htmlAttributes: new { @class = "btn btn-default btn-xs" })
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <input type="submit" value="Delete" class="btn btn-primary" disabled="disabled" />
+        </div>
+    }
+</div>
